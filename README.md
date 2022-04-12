@@ -20,7 +20,7 @@
 
 4.Ground plane – Calibrates Cameras with respect to the ground  
 
--> Place ground calibration device on the descired origin of the room  
+-> Place ground calibration device on the desired origin of the room  
 
 -> Select ‘Ground Plane’ icon 
 
