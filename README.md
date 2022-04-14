@@ -174,7 +174,7 @@ Open MatLab:
 
 -> upload file into MATLAB 
 
--> type:
+type:
 ```
 t=readtable(‘name_of_file.csv’) 
 ```
