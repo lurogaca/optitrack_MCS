@@ -6,11 +6,11 @@
 
 *All terminals MUST be sourced -> $source /opt/ros/noetic/setup.bash * 
 ## Calibrating Optitrack
-1.Start System  
+1.**Start System**
 
-2.Launch Software Motive  
+2.**Launch Software Motive**  
 
-3.Wanding – Calibrates Cameras with respect to the room 
+3.**Wanding** – Calibrates Cameras with respect to the room 
 
 -> Under Camera Calibration click on ‘Start Wanding’ 
 
@@ -22,7 +22,7 @@
 
 -> Click ‘Apply’ 
 
-4.Ground plane – Calibrates Cameras with respect to the ground  
+4.**Ground plane** – Calibrates Cameras with respect to the ground  
 
 -> Place ground calibration device on the desired origin of the room  
 
@@ -32,7 +32,7 @@
 
 -> Click Export 
 
-5.Create Objects 
+5.**Create Objects** 
 
 -> Place object on floor on the origin previously defined facing the desired orientation 
 
@@ -49,18 +49,18 @@ the created object
 	
 ## Reading Data
 
-Install Mocap_Optitrack Package:
+**Install Mocap_Optitrack Package:**
 
-Open a new terminal  
+**Open a new terminal**
 
 ```
 $ roscore
 ```
-Open a new terminal 
+**Open a new terminal**
 ```
 $ sudo apt-get install ros-noetic-mocap-optitrack 
 ```
-Edit mocap.yaml file: 
+**Edit mocap.yaml file:**
 ```
 $cd /opt/ros/noetic 
 
@@ -72,7 +72,7 @@ $cd config
 
 $ sudo gedit mocap.yaml 
 ```
-Edit the following: 
+**Edit the following:** 
 
 - delete robot_2 paragraph  
 
@@ -88,14 +88,14 @@ Edit the following:
 
 
 
-Connect to Motion Capture System:
+**Connect to Motion Capture System:**
 
 
-Open a new terminal 
+**Open a new terminal**
 ```
 $ roslaunch mocap_optitrack mocap.launch 
 ```
-Open a new terminal 
+**Open a new terminal**
 ```
 $ rostopic list 
 
@@ -106,22 +106,22 @@ $ rostopic echo /mocap_node/bebop_1/pose
 A Rosbag or bag is a file format in ROS for storing ROS message data. These bags are often created by
 subscribing to one or more ROS topics and storing the received message data in an efficient file structure. 
 
-Create Rosbag Directory: 
+**Create Rosbag Directory:** 
 
-Open a new terminal 
+**Open a new terminal** 
 
 ```
 $ roscore
 ```
-Open a new terminal 
+**Open a new terminal**
 
 ```
 $ mkdir ~/bagfiles 
 $ cd ~/bagfiles 
 ```
-Record Data from motion capture system:  
+**Record Data from motion capture system:**
 
-Open a new terminal 
+**Open a new terminal**
 ```
 $ roslaunch mocap_optitrack mocap.launch 
 
@@ -137,18 +137,18 @@ $ rosbag play (rosbag name).bag
 You can graph your using PyQtGraph (2D) or Matlab (3D) 
 
 
-PyQtGraph: 
+**PyQtGraph:**
 
-Open a new terminal  
+**Open a new terminal**
 ```
 $ roscore
 ```
-Open a new terminal  
+**Open a new terminal** 
 ```
 $ cd ~/bagfiles 
 $ $rosbag play (rosbag name).bag
 ```
-Open a new terminal  
+**Open a new terminal** 
 ```
 $ rqt_bag
 ```
@@ -164,21 +164,21 @@ $ rqt_bag
 
 
 
-MATLAB:
+**MATLAB:**
 
-Open a new terminal to convert bag files to csv file 
+**Open a new terminal to convert bag files to csv file**
 ```
 $ rostopic echo -b (bag name).bag -p /mocap_node/bebop_1/pose>(name for csv file).csv 
 ```
-Open MatLab:
+**Open MatLab:**
 
 -> upload file into MATLAB 
 
-type:
+**Type:**
 ```
 t=readtable(‘name_of_file.csv’) 
 ```
-type :
+**Type :**
 ```
 plot3 (t, 5,6,7)) 
 ```
